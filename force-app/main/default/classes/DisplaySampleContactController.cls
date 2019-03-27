@@ -11,4 +11,21 @@ public class DisplaySampleContactController {
                 AND Picture__c != null 
                 LIMIT 1];
     }
+
+    @AuraEnabled
+    public static Contact getSingleContactByName(String searchName){
+        List<Contact> conList = getContactsByName(searchName);
+
+        if(!conList.isEmpty()) {
+            return conList[0];
+        } else {
+            return null;
+        }
+    }
+
+    @AuraEnabled
+    public static String updateContact(Contact con){
+        update con;
+        return 'Success';
+    }
 }
