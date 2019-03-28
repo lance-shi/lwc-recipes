@@ -1,0 +1,13 @@
+<template>
+    <div>
+        <p>{contact.Name}</p>
+        <p>
+            <lightning-input onchange={handlePhoneChange} label="Phone" value={contact.Phone}>
+            </lightning-input>
+        </p>
+        <p>
+            <lightning-input onchange={handleEmailChange} label="Email" value={contact.Email}>
+            </lightning-input>
+        </p>
+    </div>
+</template>

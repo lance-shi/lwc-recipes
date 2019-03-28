@@ -40,4 +40,11 @@ public class DisplaySampleContactController {
         insert newAccList;
         return 'Success';
     }
+
+    @AuraEnabled
+    public static string submitContacts(List<Contact> conList){
+        update conList;
+
+        return 'Success';
+    }
 }

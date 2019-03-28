@@ -1,0 +1,37 @@
+<template>
+        <lightning-card
+            title="UpdateSampleContact"
+            icon-name="custom:custom63"
+        >
+            <div class="slds-m-around_medium">
+                <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                    <lightning-layout-item flexibility="grow">
+                        <lightning-input
+                            type="search"
+                            onchange={handleKeyChange}
+                            label="Search"
+                            value={contactName}
+                        ></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-left_xx-small">
+                        <lightning-button
+                            label="Search"
+                            onclick={handleSearch}
+                        ></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <template if:true={contacts}>
+                    <template for:each={contacts} for:item="contact">
+                        <c-contact-input key={contact.Id} contact={contact}></c-contact-input>
+                    </template>
+                    <p>
+                        <lightning-button
+                            label="Update Contacts"
+                            variant="brand"
+                            onclick={updateContacts}
+                        ></lightning-button>
+                    </p>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
