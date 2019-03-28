@@ -28,4 +28,16 @@ public class DisplaySampleContactController {
         update con;
         return 'Success';
     }
+
+    @AuraEnabled
+    public static string addAccounts(List<String> accNameList){
+        System.debug(accNameList);
+        List<Account> newAccList = new List<Account>();
+        for(String accName: accNameList) {
+            newAccList.add(new Account(name=accName));
+        }
+
+        insert newAccList;
+        return 'Success';
+    }
 }

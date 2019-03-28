@@ -1,0 +1,27 @@
+<template>
+        <lightning-card
+        title="Add Multiple Accounts"
+        icon-name="custom:custom63"
+    >
+        <div class="slds-m-around_medium">
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id}>
+                    <p>
+                        <lightning-input class="accNameInput" label="Account Name" value={account.Name}>
+                        </lightning-input>
+                    </p>
+                </div>
+            </template>
+            <lightning-button
+                label="Add Account"
+                variant="brand"
+                onclick={addAccount}
+            ></lightning-button>
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                onclick={submitAccounts}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>
